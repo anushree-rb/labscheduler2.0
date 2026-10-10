@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Laboratory Experiment Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div>
+            <h1>LabScheduler</h1>
+            <p>College Laboratory Experiment Scheduler</p>
+        </div>
+        <span class="status">Smart Scheduling</span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <h2>Laboratory Management Dashboard</h2>
+            <p>Manage experiments, student groups, and laboratory sessions.</p>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Experiments</h3>
+                <p id="experimentCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Scheduled Sessions</h3>
+                <p id="sessionCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Conflicts</h3>
+                <p id="conflictCount">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Add Laboratory Session</h2>
+
+            <form id="sessionForm">
+                <label for="experiment">Experiment Name</label>
+                <input id="experiment" type="text"
+                       placeholder="e.g. Electronics Experiment" required>
+
+                <label for="group">Student Group</label>
+                <input id="group" type="text"
+                       placeholder="e.g. Group A" required>
+
+                <label for="lab">Laboratory</label>
+                <input id="lab" type="text"
+                       placeholder="e.g. Electronics Lab" required>
+
+                <label for="equipment">Required Equipment</label>
+                <input id="equipment" type="text"
+                       placeholder="e.g. Oscilloscope" required>
+
+                <label for="instructor">Instructor</label>
+                <input id="instructor" type="text"
+                       placeholder="e.g. Dr. Kumar" required>
+
+                <label for="time">Time Slot</label>
+                <select id="time" required>
+                    <option value="">Select a time</option>
+                    <option>09:00 - 10:00</option>
+                    <option>10:00 - 11:00</option>
+                    <option>11:00 - 12:00</option>
+                    <option>01:00 - 02:00</option>
+                    <option>02:00 - 03:00</option>
+                </select>
+
+                <button type="submit">Add Session</button>
+            </form>
+
+            <p id="message" role="status"></p>
+        </section>
+
+        <section class="panel">
+            <h2>Laboratory Timetable</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Experiment</th>
+                            <th>Group</th>
+                            <th>Laboratory</th>
+                            <th>Equipment</th>
+                            <th>Instructor</th>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="scheduleBody"></tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage">No sessions added yet.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>College Laboratory Experiment Scheduler | HAT VERTEX</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
